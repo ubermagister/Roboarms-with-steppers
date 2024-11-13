@@ -102,6 +102,8 @@ void Stepper::Scan(int anglex, int angley, int interval) {
     }Serial.printf("Scan complete!");
 }
 
+
+
 void Stepper::Shutdown() {
     Serial.printf("Shutting down");
     delay(1000);
@@ -114,4 +116,6 @@ void Stepper::Shutdown() {
 
 
 
+void Stepper::Kiihtyttaja() {
 
+}

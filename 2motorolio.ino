@@ -3,7 +3,7 @@
 #include <Preferences.h>
 #include <FastAccelStepper.h>
 #include "Stepper.h"
-//#include <esp_sleep.h>
+
 
 
 //esp pinnit, muutettavissa vaihtamalla pin numerot
@@ -106,7 +106,6 @@ void setup() {
     digitalWrite(M2S1, LOW);
     digitalWrite(M2S2, LOW);
 
-    setupabsolutespeedlimit(200000);
 
 Serial.printf("end of startup\n available commands: zero, scan <tilt> <pan> <interval in milliseconds>, shutdown");
 
