@@ -3,6 +3,11 @@
 #include <Preferences.h>
 #include <FastAccelStepper.h>
 #include "Stepper.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <map>
+using namespace std;
 
 
 
@@ -159,7 +164,7 @@ delay(1000);
 void loop() { 
    
 if (Serial.available() > 0) {
-        String command = Serial.readStringUntil('\n'); // Read command until newline
+        String command = Serial.readStringUntil('\n'); 
 
         if (command == "zero") {
             Stepper steppi; 
@@ -172,8 +177,14 @@ if (Serial.available() > 0) {
             Stepper steppi;
             steppi.Scan(anglex, angley, interval);
             Serial.printf("Scanned with angles: %d, %d and interval: %d\n", anglex, angley, interval);
-        } else if (command == "shutdown") {
+        }
+        else if (command == "shutdown") {
             Stepper steppi;
+            steppi.Shutdown();
+            Serial.printf("Shutting down...");
+        }
+        else if (command == "testmode") {
+            kiihdyttaja kiihdy;
             steppi.Shutdown();
             Serial.printf("Shutting down...");
         } else {

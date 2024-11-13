@@ -116,6 +116,4 @@ void Stepper::Shutdown() {
 
 
 
-void Stepper::Kiihtyttaja() {
 
-}

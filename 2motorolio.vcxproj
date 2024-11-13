@@ -78,9 +78,11 @@
       <FileType>CppCode</FileType>
       <DeploymentContent>true</DeploymentContent>
     </ClCompile>
+    <ClCompile Include="kiihdyttaja.cpp" />
     <ClCompile Include="Stepper.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="kiihdyttaja.h" />
     <ClInclude Include="Stepper.h" />
     <ClInclude Include="__vm\.2motorolio.vsarduino.h" />
     <ClInclude Include="__vm\.Roboarms-with-steppers.vsarduino.h" />
