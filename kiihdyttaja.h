@@ -14,10 +14,10 @@ public:
 	};
 	void printtaaSpeksit(const Speksit& speksi) const{};
 	
-	bool lataaSpeksit(const std::string& filename);
+	bool lataaSpeksit(const string& filename);
 
 
-	void tallennaSpeksit(const std::string& filename) const;
+	void tallennaSpeksit(const string& filename) const;
 
 	
 	void kyselySpeksit();
@@ -25,7 +25,7 @@ public:
 private:
 	
 	std::map<string, Speksit> speksiMap;
-	void teecustomSpeksit(const string& name);
+	void teecustomSpeksit(const string& nimi);
 
 };
 
