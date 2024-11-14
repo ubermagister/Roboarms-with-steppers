@@ -1,4 +1,7 @@
 #include "kiihdyttaja.h"
+#include <map>
+
+
 
 void kiihdyttaja::printtaaSpeksit(const Speksit& speksi) const {
 
@@ -6,7 +9,7 @@ void kiihdyttaja::printtaaSpeksit(const Speksit& speksi) const {
 
 };
 
-bool kiihdyttaja::lataaSpeksit(const string& filename){
+bool kiihdyttaja::lataaSpeksit(const string& tiedosto){
     ifstream file(filename);
     if (file.is_open()) {
         string nimi;
@@ -26,7 +29,7 @@ bool kiihdyttaja::lataaSpeksit(const string& filename){
 }
 
 
-void kiihdyttaja::tallennaSpeksit(const string& filename) const{}
+void kiihdyttaja::tallennaSpeksit(const string& tiedosto) const{}
 
 
 void kiihdyttaja::kyselySpeksit(){
@@ -49,6 +52,6 @@ void kiihdyttaja::teecustomSpeksit(const string& nimi) {
     cin >> uusispeksi.jaksonaika;
 
     speksiMap[nimi] = uusispeksi;
-    cout << "New motor specifications saved with name "<<nimi<<endl;
+    cout << "Uudet speksit tallennettu nimellä: "<<nimi<<endl;
 
 };

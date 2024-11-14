@@ -1,12 +1,9 @@
 
-#include <dummy.h>
 #include <Preferences.h>
 #include <FastAccelStepper.h>
 #include "Stepper.h"
-#include <iostream>
-#include <fstream>
+#include "kiihdyttaja.h"
 #include <string>
-#include <map>
 using namespace std;
 
 
@@ -171,7 +168,7 @@ if (Serial.available() > 0) {
             steppi.Zero();
             Serial.printf("both motors at 0...");
         } else if (command.startsWith("scan")) {
-            // Example: scan 90 90 1000
+            
             int anglex, angley, interval;
             sscanf(command.c_str(), "scan %d %d %d", &anglex, &angley, &interval);
             Stepper steppi;
@@ -182,11 +179,7 @@ if (Serial.available() > 0) {
             Stepper steppi;
             steppi.Shutdown();
             Serial.printf("Shutting down...");
-        }
-        else if (command == "testmode") {
-            kiihdyttaja kiihdy;
-            steppi.Shutdown();
-            Serial.printf("Shutting down...");
+        
         } else {
             Serial.printf("Unknown command. Available commands: zero, scan <angleX> <angleY> <interval>, shutdown");
         }

@@ -12,12 +12,13 @@ public:
 	
 
 	};
-	void printtaaSpeksit(const Speksit& speksi) const{};
+	void printtaaSpeksit(const Speksit& tiedosto) const;
 	
-	bool lataaSpeksit(const string& filename);
+	bool lataaSpeksit();
 
 
-	void tallennaSpeksit(const string& filename) const;
+
+	void tallennaSpeksit(const string& tiedosto) const;
 
 	
 	void kyselySpeksit();
