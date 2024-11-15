@@ -1,16 +1,31 @@
 #include "kiihdyttaja.h"
 #include <map>
+#include <iostream>
+#include <fstream>
+#include <limits>
 
-
-
+            
 void kiihdyttaja::printtaaSpeksit(const Speksit& speksi) const {
+    if (peksiMap.empty()) {
+        cout << "tiedosto löytynyt mutta tyhjä" << endl;
+        return;
+}
+    for (const auto& entry : speksiMap) {
+        const Speksit& speksi = entry.second;
+        cout << "Nimi:" << speksi.nimi << endl;
+        cout << "Gear Ratio:" << speksi.GearRatio << endl;
+        cout << "Step Angle:" << speksi.StepAngle << endl;
+        cout << "Jaksonkulma:" << speksi.jaksonkulma << endl;
+        cout << "Jaksonaika:" << speksi.jaksonaika << endl;
+        cout << "----------:"<< endl;
 
+    }
 
 
 };
 
 bool kiihdyttaja::lataaSpeksit(const string& tiedosto){
-    ifstream file(filename);
+    ifstream file(tiedosto);
     if (file.is_open()) {
         string nimi;
         Speksit speksi;
@@ -38,18 +53,61 @@ void kiihdyttaja::kyselySpeksit(){
 void kiihdyttaja::teecustomSpeksit(const string& nimi) {
     Speksit uusispeksi;
     uusispeksi.nimi = nimi;
-    double driver, driven;
-    cout << "Anna Gear ratio:n antamalla ensiksi ajuri rattaan hammasluku:";
-    cin >> driver;
-    cout << "Anna ajettavan rattaan hammasluku";
-    cin >> driven;
-    uusispeksi.GearRatio = driver / driven;
-    cout << "Anna steppikulma <asteina>:";
-    cin >> uusispeksi.StepAngle;
-    cout << "Enter motor torque:";
-    cin >> uusispeksi.jaksonkulma;
-    cout << "Anna jaksonaika <millisekunttia>:";
-    cin >> uusispeksi.jaksonaika;
+    
+    while (true) {
+        double driver, driven;
+        cout << "Anna Gear ratio:n antamalla ensiksi ajuri rattaan hammasluku: ";
+        if (cin >> driver) {
+            cout << "Anna ajettavan rattaan hammasluku: ";
+            if (cin >> driven && driven != 0) {
+                uusispeksi.GearRatio = driver / driven;
+                break; 
+            }
+            else {
+                cout << "Virheellinen syöte, ajettavan rattaan hammasluku ei voi olla nolla tai kirjain.\n";
+                cin.clear(); 
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+            }
+        }
+        else {
+            cout << "Virheellinen syöte, syötä numeroita.\n";
+            cin.clear(); 
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        }
+    }
+    while (true) {
+        cout << "Anna moottorin steppikulma <asteina>: ";
+        if (cin >> uusispeksi.StepAngle) {
+            break; 
+        }
+        else {
+            cout << "Virheellinen syöte, syötä numeroita.\n";
+            cin.clear(); 
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        }
+    }
+    while (true) {
+        cout << "Anna jaksonkulma <asteina>: ";
+        if (cin >> uusispeksi.jaksonkulma) {
+            break; 
+        }
+        else {
+            cout << "Virheellinen syöte, syötä numeroita.\n";
+            cin.clear(); 
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    }    while (true) {
+        cout << "Anna jaksonaika <millisekunttia>: ";
+        if (cin >> uusispeksi.jaksonaika) {
+            break; 
+        }
+        else {
+            cout << "Virheellinen syöte, syötä numeroita.\n";
+            cin.clear(); 
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        }
+    }
+
 
     speksiMap[nimi] = uusispeksi;
     cout << "Uudet speksit tallennettu nimellä: "<<nimi<<endl;

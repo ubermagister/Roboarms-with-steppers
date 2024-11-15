@@ -1,4 +1,7 @@
 #pragma once
+#include <map>
+#include <string>
+using namespace std;
 
 class kiihdyttaja
 {
@@ -12,20 +15,23 @@ public:
 	
 
 	};
-	void printtaaSpeksit(const Speksit& tiedosto) const;
+	void printtaaSpeksit() const;
 	
-	bool lataaSpeksit();
+	bool lataaSpeksit(const string& tiedosto);
 
-
+	bool lataaSpeksitNimella(const string& nimi);
 
 	void tallennaSpeksit(const string& tiedosto) const;
-
 	
 	void kyselySpeksit();
+
+	const Speksit& haeSpeksit() const { return loadedSpeksit;  }
 
 private:
 	
 	std::map<string, Speksit> speksiMap;
+	Speksit loadedSpeksit;
+
 	void teecustomSpeksit(const string& nimi);
 
 };
