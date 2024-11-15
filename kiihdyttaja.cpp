@@ -5,8 +5,8 @@
 #include <limits>
 
             
-void kiihdyttaja::printtaaSpeksit(const Speksit& speksi) const {
-    if (peksiMap.empty()) {
+void kiihdyttaja::printtaaSpeksit() const{
+    if (speksiMap.empty()) {
         cout << "tiedosto löytynyt mutta tyhjä" << endl;
         return;
 }
@@ -26,28 +26,61 @@ void kiihdyttaja::printtaaSpeksit(const Speksit& speksi) const {
 
 bool kiihdyttaja::lataaSpeksit(const string& tiedosto){
     ifstream file(tiedosto);
-    if (file.is_open()) {
+    if (!file.is_open()) {
+        cout << "tiedoston avaamisessa ongelma" << endl;
+        return false;
+    }
         string nimi;
         Speksit speksi;
         while (getline(file, nimi)) {
             file >> speksi.GearRatio >> speksi.StepAngle >> speksi.jaksonkulma >> speksi.jaksonaika;
             file.ignore();
             speksi.nimi = nimi;
-            speksiMap[nimi] = speksi;
+            speksiMap[nimi] = speksi;   
         }
         file.close();
         return true;
     }
+
+bool kiihdyttaja::lataaSpeksitNimella(const string& nimi)
+{
+    auto it = speksiMap.find(nimi);
+    if (it != speksiMap.end()) {
+        loadedSpeksit = it->second;
+        return true;
+    }
+    cout << "Speksit nimellä: " << nimi << " Ei Löydettävissä" << endl;
     return false;
-
-
 }
 
 
-void kiihdyttaja::tallennaSpeksit(const string& tiedosto) const{}
+
+
+
+void kiihdyttaja::tallennaSpeksit(const string& tiedosto) const {
+
+    ofstream file(tiedosto);
+    if (!file.is_open()) {
+        cout << "tiedoston avaamisessa ongelma" << endl;
+        return;
+    }
+    for (const auto& entry : speksiMap) {
+        const Speksit& speksi = entry.second;
+        file << speksi.nimi << endl;
+        file << speksi.GearRatio << " " << speksi.StepAngle << " "
+            << speksi.jaksonkulma << " " << speksi.jaksonaika << endl;
+    }
+    
+    file.close();
+}
 
 
 void kiihdyttaja::kyselySpeksit(){
+    string nimi;
+    cout << "nimeä uudet speksit";
+        cin >> nimi;
+
+        teecustomSpeksit(nimi);
 }
 
 void kiihdyttaja::teecustomSpeksit(const string& nimi) {
@@ -110,6 +143,7 @@ void kiihdyttaja::teecustomSpeksit(const string& nimi) {
 
 
     speksiMap[nimi] = uusispeksi;
+    tallennaSpeksit("speksit.txt");
     cout << "Uudet speksit tallennettu nimellä: "<<nimi<<endl;
 
 };

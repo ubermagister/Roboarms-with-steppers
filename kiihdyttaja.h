@@ -25,7 +25,8 @@ public:
 	
 	void kyselySpeksit();
 
-	const Speksit& haeSpeksit() const { return loadedSpeksit;  }
+	const Speksit& haeSpeksit() const { 
+		return loadedSpeksit;  }
 
 private:
 	

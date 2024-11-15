@@ -93,8 +93,7 @@
     <ResourceCompile Include="2motorolio.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="board.txt" />
-    <Text Include="speksitiedosto.txt" />
+    <Text Include="speksit.txt" />
   </ItemGroup>
   <PropertyGroup>
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>

@@ -1,9 +1,8 @@
 #include <iostream>
-#include <fstream>
 #include <string>
 #include "kiihdyttaja.h"
-
 using namespace std;
+
 
 
 
@@ -12,8 +11,57 @@ void sendCommandToESP(const string& command) {
     string response = ser.readline();  // Read response from the ESP
     cout << "ESP Response: " << response << endl;
 
+void controlESP();
+
+
+
 int main() {
-  
+    kiihdyttaja kiihdyta;
+
+    if (kiihdyta.lataaSpeksit("stepksit.txt")) {
+        cout << "Speksit loadattu" << endl;
+    }
+
+    string command;
+    bool edetaan=false;
+    while (true) {
+        cout << "Anna komento (speksit, load <nimi>, customspeksi): ";
+        cin >> command;
+
+        if (command == "speksit") {
+            kiihdyta.printtaaSpeksit();
+        }
+        else if (command == "load") {
+            string nimi;
+            cin >> nimi;
+            if (kiihdyta.lataaSpeksitNimella(nimi)) {
+                const auto& loaded = kiihdyta.haeSpeksit();
+                cout << "Loaded Speksit: " << loaded.nimi << endl;
+                cout << "Gear Ratio: " << loaded.GearRatio << endl;
+                cout << "Step Angle: " << loaded.StepAngle << endl;
+                cout << "Angle per Step: " << loaded.jaksonkulma << endl;
+                cout << "Step Time: " << loaded.jaksonaika << " ms" << endl;
+
+                cout << "Edetäänkö näillä parametreilla? (0/1)";
+                    cin >> edetaan;
+                if (edetaan) {
+                    controlESP();
+                }
+                
+            }
+            else {
+                cout << "loadaus epäonnistui" << endl;
+            }
+        }
+        else if (command == "customspeksi") {
+            kiihdyta.kyselySpeksit();
+        }else{
+            cout 
+
+
+
+
+
     try {
         ser.setPort("¨COM6");  
         ser.setBaudrate(115200);
