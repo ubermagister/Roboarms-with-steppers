@@ -5,6 +5,10 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2motorolio", "2motorolio.vcxproj", "{57954F26-9DD7-4E9B-B28D-4951670B75DD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication2", "..\ConsoleApplication2\ConsoleApplication2.vcxproj", "{69CD5F51-AF4E-4FFE-99B3-90A7275D9026}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "microsoft sdk", "microsoft sdk", "{AFFAF66E-57FC-4591-85F2-4DB66B9CF276}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -25,6 +29,14 @@ Global
 		{57954F26-9DD7-4E9B-B28D-4951670B75DD}.Release|ARM64.ActiveCfg = Release|ARM64
 		{57954F26-9DD7-4E9B-B28D-4951670B75DD}.Release|ARM64.Build.0 = Release|ARM64
 		{57954F26-9DD7-4E9B-B28D-4951670B75DD}.Release|ARM64.Deploy.0 = Release|ARM64
+		{69CD5F51-AF4E-4FFE-99B3-90A7275D9026}.Debug|ARM.ActiveCfg = Debug|x64
+		{69CD5F51-AF4E-4FFE-99B3-90A7275D9026}.Debug|ARM.Build.0 = Debug|x64
+		{69CD5F51-AF4E-4FFE-99B3-90A7275D9026}.Debug|ARM64.ActiveCfg = Debug|x64
+		{69CD5F51-AF4E-4FFE-99B3-90A7275D9026}.Debug|ARM64.Build.0 = Debug|x64
+		{69CD5F51-AF4E-4FFE-99B3-90A7275D9026}.Release|ARM.ActiveCfg = Release|x64
+		{69CD5F51-AF4E-4FFE-99B3-90A7275D9026}.Release|ARM.Build.0 = Release|x64
+		{69CD5F51-AF4E-4FFE-99B3-90A7275D9026}.Release|ARM64.ActiveCfg = Release|x64
+		{69CD5F51-AF4E-4FFE-99B3-90A7275D9026}.Release|ARM64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

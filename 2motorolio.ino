@@ -4,6 +4,7 @@
 #include "Stepper.h"
 #include "kiihdyttaja.h"
 #include <string>
+#include <arduino.h>
 using namespace std;
 
 
