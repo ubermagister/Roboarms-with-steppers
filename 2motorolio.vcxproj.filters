@@ -22,19 +22,7 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\ConsoleApplication2\ConsoleApplication2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="kiihdyttaja.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="windows.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="winapifamily.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="winpackagefamily.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -54,13 +42,7 @@
     <ClInclude Include="kiihdyttaja.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="windows.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="winapifamily.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="winpackagefamily.h">
+    <ClInclude Include="__vm\.uusi repio.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,8 +5,6 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2motorolio", "2motorolio.vcxproj", "{57954F26-9DD7-4E9B-B28D-4951670B75DD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication2", "ConsoleApplication2\ConsoleApplication2.vcxproj", "{FD9104AD-2132-4203-AA59-AA3A6DA6CC7E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -27,14 +25,6 @@ Global
 		{57954F26-9DD7-4E9B-B28D-4951670B75DD}.Release|ARM64.ActiveCfg = Release|ARM64
 		{57954F26-9DD7-4E9B-B28D-4951670B75DD}.Release|ARM64.Build.0 = Release|ARM64
 		{57954F26-9DD7-4E9B-B28D-4951670B75DD}.Release|ARM64.Deploy.0 = Release|ARM64
-		{FD9104AD-2132-4203-AA59-AA3A6DA6CC7E}.Debug|ARM.ActiveCfg = Debug|x64
-		{FD9104AD-2132-4203-AA59-AA3A6DA6CC7E}.Debug|ARM.Build.0 = Debug|x64
-		{FD9104AD-2132-4203-AA59-AA3A6DA6CC7E}.Debug|ARM64.ActiveCfg = Debug|x64
-		{FD9104AD-2132-4203-AA59-AA3A6DA6CC7E}.Debug|ARM64.Build.0 = Debug|x64
-		{FD9104AD-2132-4203-AA59-AA3A6DA6CC7E}.Release|ARM.ActiveCfg = Release|x64
-		{FD9104AD-2132-4203-AA59-AA3A6DA6CC7E}.Release|ARM.Build.0 = Release|x64
-		{FD9104AD-2132-4203-AA59-AA3A6DA6CC7E}.Release|ARM64.ActiveCfg = Release|x64
-		{FD9104AD-2132-4203-AA59-AA3A6DA6CC7E}.Release|ARM64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
